@@ -109,7 +109,6 @@ D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\b
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
-D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\HallMark Management System.csprojAssemblyReference.cache
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\BlankView.g.cs
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\CompanyView.g.cs
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\FundEntryView.g.cs
