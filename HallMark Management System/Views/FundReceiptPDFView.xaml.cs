@@ -1,4 +1,5 @@
-﻿using HallMark_Management_System.ViewModels;
+﻿using HallMark_Management_System.Service;
+using HallMark_Management_System.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,8 +19,11 @@ namespace HallMark_Management_System.Views
     /// <summary>
     /// Interaction logic for FundReceiptPDFView.xaml
     /// </summary>
+    
     public partial class FundReceiptPDFView : Window
     {
+
+        private FundTransferTableService fundTransferTableService = new FundTransferTableService();
         public FundReceiptPDFView()
         {
             InitializeComponent();
@@ -29,6 +33,14 @@ namespace HallMark_Management_System.Views
                     string cheque_no, string cheque_date, string bank_name, string bill_no, string bill_date,
                     string remark, String date, String name_of_jeweller, string total_amount)
         {
+            string srNo = "";
+            List<String> tableIds = fundTransferTableService.GetLastTuppleId();
+
+            foreach(String eachId in tableIds)
+            {
+                srNo = eachId;
+                break;
+            }
             FundReceiptPDFViewModel vm = new FundReceiptPDFViewModel
             {
                 Type = type,
@@ -41,7 +53,8 @@ namespace HallMark_Management_System.Views
                 BankInfo = "Bank " + bank_name,
                 PaymentInfo = "By "+type+ " Advanceed /  Part-Full-Payment against our",
                 BillNo = "Bill No. "+bill_no+ " Dated"+bill_date,
-                TotalAmountNumber = "Rs. "+total_amount+"/-"
+                TotalAmountNumber = "Rs. "+total_amount+"/-",
+                SrNo = srNo
             };
 
             this.DataContext = vm;

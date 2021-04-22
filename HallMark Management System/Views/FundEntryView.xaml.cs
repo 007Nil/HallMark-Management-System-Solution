@@ -32,7 +32,6 @@ namespace HallMark_Management_System.Views
     /// </summary>
     public partial class FundEntryView : UserControl
     {
-
         private static readonly Regex _regex = new Regex("[^0-9.-]+"); //regex that matches disallowed text
 
        // private FundEntryModel fundEntry = new FundEntryModel();

@@ -20,6 +20,7 @@ namespace HallMark_Management_System.ViewModels
         private string payment_info;
         private string bill_no;
         private string total_amount_number;
+        private string sr_no;
         public string Type { get => type; set => Set(ref type, value); }
 
         public string Date { get => date; set => Set(ref date, value); }
@@ -39,6 +40,8 @@ namespace HallMark_Management_System.ViewModels
         public string BillNo { get => bill_no; set => Set(ref bill_no, value); }
 
         public string TotalAmountNumber { get => total_amount_number; set => Set(ref total_amount_number, value); }
+
+        public string SrNo { get => sr_no; set => Set(ref sr_no, value); }
 
 
     }
