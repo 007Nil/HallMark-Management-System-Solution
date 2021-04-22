@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HallMark Management System", "HallMark Management System\HallMark Management System.csproj", "{AD5A97D3-26F4-459B-A254-3B31DC75359D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD5A97D3-26F4-459B-A254-3B31DC75359D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD5A97D3-26F4-459B-A254-3B31DC75359D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD5A97D3-26F4-459B-A254-3B31DC75359D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD5A97D3-26F4-459B-A254-3B31DC75359D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A160A96-0A65-4FE9-B38D-2750FCF630A5}
+	EndGlobalSection
+EndGlobal

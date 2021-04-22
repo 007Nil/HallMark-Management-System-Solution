@@ -1,0 +1,71 @@
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\HallMark.db
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\HallMark Management System.exe.config
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\HallMark Management System.exe
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\HallMark Management System.pdb
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\Caliburn.Micro.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\Caliburn.Micro.Platform.Core.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\Caliburn.Micro.Platform.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\Dapper.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\System.Configuration.ConfigurationManager.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\System.Data.SQLite.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\System.Security.AccessControl.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\System.Security.Permissions.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\System.Security.Principal.Windows.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\System.Windows.Interactivity.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\Xceed.Wpf.AvalonDock.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\Xceed.Wpf.Toolkit.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\Caliburn.Micro.xml
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\Caliburn.Micro.Platform.xml
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\Caliburn.Micro.Platform.Core.xml
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\Dapper.xml
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\System.Data.SQLite.xml
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\System.Security.AccessControl.xml
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\System.Security.Permissions.xml
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\System.Security.Principal.Windows.xml
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\ja-JP\Xceed.Wpf.AvalonDock.resources.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\Views\BlankView.g.cs
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\Views\CompanyView.g.cs
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\Views\FundEntryView.g.cs
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\Views\FundReceiptPDFView.g.cs
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\Views\PartyView.g.cs
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\Views\ProductView.g.cs
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\Views\ReceiptEntryView.g.cs
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\Views\ShellView.g.cs
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\Views\TestingView.g.cs
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\App.g.cs
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\HallMark Management System_MarkupCompile.cache
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\HallMark Management System_MarkupCompile.lref
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\App.baml
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\Views\BlankView.baml
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\Views\CompanyView.baml
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\Views\FundEntryView.baml
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\Views\FundReceiptPDFView.baml
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\Views\PartyView.baml
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\Views\ProductView.baml
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\Views\ReceiptEntryView.baml
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\Views\ShellView.baml
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\Views\TestingView.baml
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\HallMark Management System.g.resources
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\HallMark_Management_System.Properties.Resources.resources
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\HallMark Management System.csproj.GenerateResource.cache
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\HallMark Management System.csproj.CoreCompileInputs.cache
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\HallMark Management System.csproj.CopyComplete
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\HallMark Management System.exe
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\HallMark Management System.pdb
+D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\HallMark Management System.csprojAssemblyReference.cache

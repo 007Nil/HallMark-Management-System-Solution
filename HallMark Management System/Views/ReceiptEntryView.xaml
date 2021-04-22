@@ -1,0 +1,397 @@
+﻿<UserControl x:Class="HallMark_Management_System.Views.ReceiptEntryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HallMark_Management_System.Views" xmlns:wpfTool="http://schemas.xceed.com/wpf/xaml/toolkit" xmlns:viewmodels="clr-namespace:HallMark_Management_System.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:ReceiptEntryViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1366"
+             Background="White">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <RoutedUICommand x:Key="Ctrl1" Text="Another text"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <UserControl.InputBindings>
+        <KeyBinding Key="F2" Command="{StaticResource Ctrl1}"/>
+    </UserControl.InputBindings>
+
+    <UserControl.CommandBindings>
+        <CommandBinding Command="{StaticResource Ctrl1}" Executed="CommandBinding_Executed"/>
+    </UserControl.CommandBindings>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <ToolBarTray Grid.Row="0" Grid.Column="1" Background="#F0DDF4">
+            <ToolBar Background="#F0DDF4">
+                <ToolBar.Style>
+                    <Style TargetType="ToolBar">
+                        <!-- Not Dropdown Button -->
+                        <Setter Property="ToolBarTray.IsLocked" Value="True"/>
+                        <!-- Not Overflow Button -->
+                        <Setter Property="OverflowMode" Value="Never"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ToolBar}">
+                                    <ToolBarPanel IsItemsHost="True" Background="#F0DDF4"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ToolBar.Style>
+                <Button Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/new.png" Height="30" Width="30" />
+                </Button>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/edit.png" Height="30" Width="30" />
+                </Button>
+                <Button x:Name="btnSave"  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/save.png" Height="30" Width="30" />
+                </Button>
+                <Button Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/discard.png" Height="30" Width="30" />
+                </Button>
+
+                <Separator></Separator>
+                <Button Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/reload.png" Height="30" Width="30" />
+                </Button>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/search.png" Height="30" Width="30" />
+                </Button>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/print.png" Height="30" Width="30" />
+                </Button>
+                <Separator></Separator>
+                <Button Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/up.png" Height="30" Width="30" />
+                </Button>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/right.png" Height="30" Width="30" />
+                </Button>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/left.png" Height="30" Width="30" />
+                </Button>
+
+                <Button Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/down.png" Height="30" Width="30" />
+                </Button>
+                <Separator></Separator>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/close.png" Height="30" Width="30" />
+                </Button>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/poweroff.png" Height="30" Width="30" />
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+
+        <TextBlock Grid.Column="1" Grid.Row="1" Background="Blue" Padding="20,0,0,0" Margin="0,5,0,0">
+            <Run Text="JELLERY PACKING RECEIPT ENTRY" Foreground="White" FontSize="18" FontWeight="Medium"/>
+        </TextBlock>
+
+        <Border
+            Margin="0,5,0,0"
+            BorderThickness="1"    
+            BorderBrush="Green"    
+            CornerRadius="1"    
+            Background="White"    
+            HorizontalAlignment="Left"    
+            VerticalAlignment="Top"    
+            Width="1200"    
+            Height="335"
+            Grid.Column="1"
+            Grid.Row="2">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Column="1" Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="* Name Of Jeweller :" Grid.Column="0" Grid.Row="0" FontSize="12" FontWeight="Bold"/>
+                    <TextBox x:Name="name_of_jeweller" Grid.Column="1" Grid.Row="0" Width="710" Margin="20,0,0,65"
+                             FontSize="14" FontWeight="Medium" HorizontalAlignment="Left" Grid.ColumnSpan="3" Grid.RowSpan="2"
+                             PreviewMouseLeftButtonDown="name_of_jeweller_MouseDown"/>
+
+                    <TextBlock Text="Address :" Grid.Column="0" Grid.Row="1"  FontSize="12" FontWeight="Bold" Margin="0,20,0,0"/>
+                    <TextBox x:Name="address" Grid.Column="1" Grid.Row="1"
+                             Margin="20,10,0,0" Width="710"
+                             Height="60"  FontSize="16"
+                             FontWeight="Medium" HorizontalAlignment="Left"
+                             Grid.ColumnSpan="3"/>
+
+                    <TextBlock Text="CML/ NO :" Grid.Column="0" Grid.Row="2"  FontSize="12" FontWeight="Bold" Margin="0,10,0,0"/>
+                    <TextBox x:Name="cml_no" Grid.Column="1" Grid.Row="2" Width="280" Height="30" Margin="20,10,0,0"
+                             FontSize="14" FontWeight="Medium" HorizontalAlignment="Left"/>
+
+                    <TextBlock Text="GST NO :" Grid.Column="2" Grid.Row="2" FontSize="12" FontWeight="Bold" Margin="20,10,0,0"/>
+                    <TextBox x:Name="gst_no" Grid.Column="3" Grid.Row="2" Width="300" Height="30" Margin="0,10,0,0"
+                             FontSize="14" FontWeight="Medium" HorizontalAlignment="Left"/>
+
+                    <TextBlock Text="Receipt Date :" Grid.Column="0" Grid.Row="3" FontSize="12" FontWeight="Bold" Margin="0,10,0,0"/>
+
+                    <wpfTool:DateTimePicker x:Name="receipt_date" Margin="20,10,0,0" Grid.Column="1" Grid.Row="3" Width="280" Height="30"  FontSize="16"
+                                        FontWeight="Medium" HorizontalAlignment="Left"
+                                        Format="Custom"
+                                        FormatString="M/d/yyy HH:mm"
+                                        TimeFormat="Custom"
+                                        TimeFormatString="HH:mm" 
+                                        ShowButtonSpinner="False"
+                                        AutoCloseCalendar="True"
+                                        />
+                    <TextBlock Text="Issue Voucher No :" Grid.Column="2" Grid.Row="3" FontSize="12" FontWeight="Bold" Margin="20,10,0,0"/>
+                    <TextBox x:Name="issue_voucher_no" Grid.Column="3" Grid.Row="3" Width="300" Height="30" Margin="0,10,0,0"
+                             FontSize="14" FontWeight="Medium" HorizontalAlignment="Left"/>
+
+                    <TextBlock Text="Delivery By :" Grid.Column="0" Grid.Row="4" FontSize="12" FontWeight="Bold" Margin="0,10,0,0"/>
+                    <TextBox x:Name="delivery_by" Grid.Column="1" Grid.Row="4" Width="710" Height="30" Margin="20,10,0,0"
+                             FontSize="14" FontWeight="Medium" HorizontalAlignment="Left" Grid.ColumnSpan="3"/>
+
+                    <TextBlock Text="Sr No :" Grid.Column="0" Grid.Row="5" FontSize="12" FontWeight="Bold" Margin="0,10,0,0"/>
+                    <TextBox x:Name="sr_no" Grid.Column="1" Grid.Row="5" Width="280" Height="30" Margin="20,10,0,0"
+                             FontSize="14" FontWeight="Medium" HorizontalAlignment="Left"/>
+
+                    <TextBlock Text="Delivery Date :" Grid.Column="2" Grid.Row="5" FontSize="12" FontWeight="Bold" Margin="0,10,0,0"/>
+                    <wpfTool:DateTimePicker x:Name="delivery_date" Margin="20,10,0,0" Grid.Column="3" Grid.Row="5" Width="280" Height="30"  FontSize="16"
+                                        FontWeight="Medium" HorizontalAlignment="Left"
+                                        Format="Custom"
+                                        FormatString="M/d/yyy HH:mm"
+                                        TimeFormat="Custom"
+                                        TimeFormatString="HH:mm" 
+                                        ShowButtonSpinner="False"
+                                        AutoCloseCalendar="True"
+                                        />
+
+                    <TextBlock Text="Box No :" Grid.Column="0" Grid.Row="6" FontSize="12" FontWeight="Bold" Margin="0,10,0,0"/>
+                    <TextBox x:Name="box_no" Grid.Column="1" Grid.Row="6" Width="280" Height="30" Margin="20,10,0,0"
+                             FontSize="14" FontWeight="Medium" HorizontalAlignment="Left"/>
+
+                    <TextBlock Text="* Previous Box No :" Grid.Column="2" Grid.Row="6" FontSize="12" FontWeight="Bold" Margin="0,10,0,0"/>
+                    <TextBox x:Name="previous_box_no" Grid.Column="3" Grid.Row="6" Width="280" Margin="20,5,0,0"
+                             FontSize="14" FontWeight="Medium" HorizontalAlignment="Left"/>
+
+                    <TextBlock Text="* Customer Name :" Grid.Column="0" Grid.Row="7" FontSize="12" FontWeight="Bold" Margin="0,10,0,0"/>
+                    <TextBox x:Name="customer_name" Grid.Column="1" Grid.Row="7" Width="710" Height="30" Margin="20,10,0,0"
+                             FontSize="14" FontWeight="Medium" HorizontalAlignment="Left" Grid.ColumnSpan="3"/>
+
+                </Grid>
+
+                <Button Grid.Column="2" Grid.Row="1" Content="Print" Width="auto" Margin="0,0,0,296" RenderTransformOrigin="0.51,-0.968"/>
+                <CheckBox Grid.Row="1" Grid.Column="2" Content="ILC Receipt" Margin="0,257,0,0" FontSize="12" FontWeight="Light" RenderTransformOrigin="0.51,0.043"/>
+
+                <Border Grid.Row="1" Grid.Column="1" Panel.ZIndex="-1" Visibility="Hidden"
+                        BorderThickness="1"    
+                        BorderBrush="Green"    
+                        CornerRadius="1"    
+                        Background="White"    
+                        HorizontalAlignment="Left"    
+                        VerticalAlignment="Top"
+                        Width="600"    
+                        Height="200"
+                        Margin="200,40,0,0"
+                        x:Name="JewllerInformationBorder">
+                    
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Button Grid.Column="1" Grid.Row="0" Content="Close" Click="Button_Close_jewellerDetailsDataGrid_Click"/>
+                        
+                        <DataGrid Grid.Row="1" Grid.Column="0"
+                              Grid.ColumnSpan="2"
+                              CanUserAddRows="False"
+                              CanUserDeleteRows="False"
+                              CanUserReorderColumns="False"
+                              CanUserResizeRows="False"
+                              CanUserSortColumns="True"
+                              IsReadOnly="True"
+                              x:Name="jewellerDetailsDataGrid"
+                              AutoGenerateColumns="False"
+                          >
+
+                            <DataGrid.CellStyle>
+                                <Style TargetType="DataGridCell">
+                                    <EventSetter Event="MouseDoubleClick" Handler="jewellerDetailsDataGrid_MouseDoubleClick"/>
+                                </Style>
+                            </DataGrid.CellStyle>
+
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Jewller Name" Binding="{Binding Path=jewller_name}" Width="200"/>
+                                <DataGridTextColumn Header="CML No" Binding="{Binding Path=cml_no}" Width="100"/>
+                                <DataGridTextColumn Header="GST No" Binding="{Binding Path=gst_no}" Width="100"/>
+                                <DataGridTextColumn Header="Address" Binding="{Binding Path=address}" Width="200"/>
+                            </DataGrid.Columns>
+
+                        </DataGrid>
+                    </Grid>
+                  
+                </Border>
+            </Grid>
+
+        </Border>
+
+        <Border
+            Margin="0,2,0,0"
+            BorderThickness="1"    
+            BorderBrush="BlueViolet"    
+            CornerRadius="1"    
+            Background="White"    
+            HorizontalAlignment="Left"    
+            VerticalAlignment="Top"    
+            Width="1200"    
+            Height="250"
+            Grid.Column="1"
+            Grid.Row="3">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <DataGrid x:Name="gridData" Grid.Row="0" Grid.Column="0"
+                          AutoGenerateColumns="False"
+                          Width="auto"
+                          CanUserResizeColumns="False"
+                          IsSynchronizedWithCurrentItem="True"
+                          SelectionUnit="Cell"
+                          SelectionMode="Single"
+                          AddingNewItem="gridData_AddingNewItem"
+                          >
+
+                    <DataGrid.Resources>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}" >
+                            <Setter Property="Background" Value="White" />
+                            <Setter Property="Foreground" Value="Black" />
+                            <Setter Property="BorderBrush" Value="Black"/>
+                            <Setter Property="BorderThickness" Value="1 1 1 1"/>
+                            <Setter Property="Margin" Value="-1,-1,0,0" />
+                            <Setter Property="Height" Value="28" />
+                            <Setter Property="Width" Value="auto"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </DataGrid.Resources>
+
+                    <DataGrid.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <EventSetter Event="MouseUp" Handler="ClickonDataGrid"/>
+                        </Style>
+                    </DataGrid.CellStyle>
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="SrNo" Binding="{Binding Path=srNo}" Width="100" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Name of Jewllery" Width="200" Binding="{Binding Path=nameOfJewllery, UpdateSourceTrigger=LostFocus}"/>
+                        <DataGridTextColumn Header="Total Pcs." Width="100" Binding="{Binding Path=totalPcs}"/>
+                        <DataGridTextColumn Header="Declared Purity" Binding="{Binding Path=declearedPurity}"  Width="100" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="Gross Wt." Binding="{Binding Path=grossWt}"  Width="100"/>
+                        <DataGridTextColumn Header="Net Wt." Binding="{Binding Path=netWt}"  Width="100"/>
+                        <DataGridTextColumn Header="MSPHC Wt." Binding="{Binding Path=msphcWt}"  Width="100"/>
+                        <DataGridTextColumn Header="Remark" Width="200" Binding="{Binding Path=remark}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <DataGrid Grid.Row="0" Grid.Column="0" Height="200" Width="300" Margin="0,30,0,0"
+                          ItemsSource="{Binding Path=JewlleryDetails}"
+                          x:Name="jewlleryDetailsGrid"
+                          Visibility="Hidden"
+                          Panel.ZIndex="-1"
+                          
+                          CanUserAddRows="False"
+                          CanUserDeleteRows="False"
+                          CanUserReorderColumns="False"
+                          CanUserResizeRows="False"
+                          CanUserSortColumns="True"
+                          AutoGenerateColumns="False"
+                          IsReadOnly="True">
+
+                    <DataGrid.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <EventSetter Event="MouseDoubleClick" Handler="jewlleryDetailsGrid_MouseDoubleClick"/>
+                        </Style>
+                    </DataGrid.CellStyle>
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Jewllery Name" Binding="{Binding Path=jewlleryName}" Width="200"/>
+                        <DataGridTextColumn Header="Purity" Binding="{Binding Path=purity}" Width="100"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                
+                
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
+                    <Grid Width="300">
+                        <TextBlock Margin="5,0,0,0" Text="Total :" HorizontalAlignment="Center"></TextBlock>
+                    </Grid>
+                    <Grid Width="100">
+                        <TextBox x:Name="sumOfTotalPcs" Width="100"></TextBox>
+                    </Grid>
+                    <Grid Width="200">
+                        <TextBox x:Name="sumOfGrossWt" Margin="100,0,0,0"></TextBox>
+                    </Grid>
+                    <Grid Width="100">
+                        <TextBox Text="" x:Name="sumOfNetWt"></TextBox>
+                    </Grid>
+                    <Grid Width="100">
+                        <TextBox Text="" x:Name="sumOfMSPHSWt"></TextBox>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+            
+        </Border>
+
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,133 @@
+﻿<UserControl x:Class="HallMark_Management_System.Views.ProductView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HallMark_Management_System.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1366">
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <ToolBarTray Grid.Row="0" Grid.Column="1" Background="#F0DDF4">
+            <ToolBar Background="#F0DDF4">
+                <ToolBar.Style>
+                    <Style TargetType="ToolBar">
+                        <!-- Not Dropdown Button -->
+                        <Setter Property="ToolBarTray.IsLocked" Value="True"/>
+                        <!-- Not Overflow Button -->
+                        <Setter Property="OverflowMode" Value="Never"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ToolBar}">
+                                    <ToolBarPanel IsItemsHost="True" Background="#F0DDF4"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ToolBar.Style>
+                <Button Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/new.png" Height="30" Width="30" />
+                </Button>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/edit.png" Height="30" Width="30" />
+                </Button>
+                <Button x:Name="btnSave"  Margin="10,0,0,0" Click="btnSave_Click">
+                    <Image Source="/Images/toolbargraphics/save.png" Height="30" Width="30" />
+                </Button>
+                <Button Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/discard.png" Height="30" Width="30" />
+                </Button>
+
+                <Separator></Separator>
+                <Button Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/reload.png" Height="30" Width="30" />
+                </Button>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/search.png" Height="30" Width="30" />
+                </Button>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/print.png" Height="30" Width="30" />
+                </Button>
+                <Separator></Separator>
+                <Button Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/up.png" Height="30" Width="30" />
+                </Button>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/right.png" Height="30" Width="30" />
+                </Button>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/left.png" Height="30" Width="30" />
+                </Button>
+
+                <Button Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/down.png" Height="30" Width="30" />
+                </Button>
+                <Separator></Separator>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/close.png" Height="30" Width="30" />
+                </Button>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/poweroff.png" Height="30" Width="30" />
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+
+
+        <TextBlock Grid.Column="1" Grid.Row="1" Background="Blue" Padding="20,0,0,0" Margin="0,20,0,0">
+            <Run Text="Product Master" Foreground="White" FontSize="18" FontWeight="Medium"/>
+        </TextBlock>
+
+        <Border
+            Margin="0,20,0,0"
+            BorderThickness="1"    
+            BorderBrush="Green"    
+            CornerRadius="1"    
+            Background="White"    
+            HorizontalAlignment="Left"    
+            VerticalAlignment="Top"    
+            Width="900"    
+            Height="150"
+            Grid.Column="1"
+            Grid.Row="2">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Product Name :"  Padding="20,10,10,0" FontSize="16" FontWeight="Bold"/>
+                <TextBox x:Name="product_name" Margin="20,10,0,0" Grid.Column="1" Grid.Row="0" Width="700" Height="30"  FontSize="16" FontWeight="Medium" HorizontalAlignment="Left" Grid.ColumnSpan="2"/>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="Purity :"  Padding="20,10,10,0" FontSize="16" FontWeight="Bold"/>
+                <TextBox x:Name="purity" Margin="20,10,0,0" Grid.Column="1" Grid.Row="1" Width="300" Height="30"  FontSize="16" FontWeight="Medium" HorizontalAlignment="Left"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Sampling Method :"  Padding="20,10,10,0" FontSize="16" FontWeight="Bold"/>
+                <ComboBox x:Name="sampling_combobox" Grid.Row="2" Grid.Column="1" Width="300" Height="30" HorizontalAlignment="Left" Margin="20,10,10,0">
+                    
+                </ComboBox>
+            </Grid>
+
+            </Border>
+        
+
+    </Grid>
+</UserControl>

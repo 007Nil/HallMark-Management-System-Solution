@@ -1,0 +1,292 @@
+﻿<UserControl x:Class="HallMark_Management_System.Views.FundEntryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HallMark_Management_System.Views"
+             xmlns:wpfTool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1366">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <RoutedUICommand x:Key="Ctrl1" Text="Another text"/>
+            <RoutedUICommand x:Key="Ctrl2" Text="Another text"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <UserControl.InputBindings>
+        <KeyBinding Key="F2" Command="{StaticResource Ctrl1}"/>
+        <KeyBinding Key="Esc" Command="{StaticResource Ctrl2}"/>
+    </UserControl.InputBindings>
+
+    <UserControl.CommandBindings>
+        <CommandBinding Command="{StaticResource Ctrl1}" Executed="ShowJewllerDetails"/>
+        <CommandBinding Command="{StaticResource Ctrl2}" Executed="CloseModalonEsc"/>
+    </UserControl.CommandBindings>
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <ToolBarTray Grid.Row="0" Grid.Column="1" Background="#F0DDF4">
+            <ToolBar Background="#F0DDF4">
+                <ToolBar.Style>
+                    <Style TargetType="ToolBar">
+                        <!-- Not Dropdown Button -->
+                        <Setter Property="ToolBarTray.IsLocked" Value="True"/>
+                        <!-- Not Overflow Button -->
+                        <Setter Property="OverflowMode" Value="Never"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ToolBar}">
+                                    <ToolBarPanel IsItemsHost="True" Background="#F0DDF4"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ToolBar.Style>
+                <Button Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/new.png" Height="30" Width="30" />
+                </Button>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/edit.png" Height="30" Width="30" />
+                </Button>
+                <Button x:Name="btnSave"  Margin="10,0,0,0" Click="btnSave_Click">
+                    <Image Source="/Images/toolbargraphics/save.png" Height="30" Width="30" />
+                </Button>
+                <Button Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/discard.png" Height="30" Width="30" />
+                </Button>
+
+                <Separator></Separator>
+                <Button Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/reload.png" Height="30" Width="30" />
+                </Button>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/search.png" Height="30" Width="30" />
+                </Button>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/print.png" Height="30" Width="30" />
+                </Button>
+                <Separator></Separator>
+                <Button Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/up.png" Height="30" Width="30" />
+                </Button>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/right.png" Height="30" Width="30" />
+                </Button>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/left.png" Height="30" Width="30" />
+                </Button>
+
+                <Button Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/down.png" Height="30" Width="30" />
+                </Button>
+                <Separator></Separator>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/close.png" Height="30" Width="30" />
+                </Button>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/poweroff.png" Height="30" Width="30" />
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+
+        <TextBlock Grid.Column="1" Grid.Row="1" Background="Blue" Padding="20,0,0,0" Margin="0,20,0,0">
+            <Run Text="Fund Transfer Entry" Foreground="White" FontSize="18" FontWeight="Medium"/>
+        </TextBlock>
+
+        <Border
+            Margin="0,20,0,0"
+            BorderThickness="1"    
+            BorderBrush="Green"    
+            CornerRadius="1"    
+            Background="White"    
+            HorizontalAlignment="Left"    
+            VerticalAlignment="Top"    
+            Width="1000"    
+            Height="500"
+            Grid.Column="1"
+            Grid.Row="2">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+         
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="* Voucher No :"  Padding="20,10,10,0" FontSize="16" FontWeight="Bold"/>
+                <TextBox x:Name="voucher_no" Margin="20,10,0,0" Grid.Column="1" Grid.Row="0" Width="250" Height="30"  FontSize="16" FontWeight="Medium" HorizontalAlignment="Left"/>
+                
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="* Date :" Margin="30,0,0,0"  Padding="20,10,10,0" FontSize="16" FontWeight="Bold"/>
+                <wpfTool:DateTimePicker x:Name="date" Margin="20,10,0,0" Grid.Column="4" Grid.Row="0" Width="250" Height="30"  FontSize="16"
+                                        FontWeight="Medium" HorizontalAlignment="Left"
+                                        Format="Custom"
+                                        FormatString="M/d/yyy HH:mm"
+                                        TimeFormat="Custom"
+                                        TimeFormatString="HH:mm" 
+                                        ShowButtonSpinner="False"
+                                        AutoCloseCalendar="True"
+                                        />
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="* Transaction Type :" Padding="20,10,10,0" FontSize="16" FontWeight="Bold"/>
+                
+                <ComboBox x:Name="transation_type" Grid.Column="1" Grid.Row="1"  Margin="20,10,10,0" Width="250" Height="30">
+                    
+                </ComboBox>
+
+                <TextBlock Text="* Type :" Grid.Column="2" Grid.Row="1" Margin="30,0,0,0" Padding="20,10,10,0" FontSize="16" FontWeight="Bold" />
+                <ComboBox Name="type" Grid.Column="4" Grid.Row="1" Height="30" Margin="20,10,10,0" Width="250">
+                    
+                </ComboBox>
+
+                <TextBlock Text="* Name Of Jeweller :" Grid.Column="0" Grid.Row="2" Padding="20,10,10,0" FontSize="16" FontWeight="Bold" />
+                <TextBox x:Name="name_of_jeweller" Margin="20,10,0,0" Grid.Column="1" Grid.Row="2" Width="710" Height="30"
+                         FontSize="16" FontWeight="Medium"
+                         HorizontalAlignment="Left"
+                         Grid.ColumnSpan="3"
+                         />
+                <TextBox x:Name="hidden_id" Grid.Row="2" Grid.Column="0" Visibility="Hidden"/>
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="* Net Amount :"  Padding="20,10,10,0" FontSize="16" FontWeight="Bold"/>
+                <TextBox x:Name="net_amount" Margin="20,10,0,0" Grid.Column="1" Grid.Row="3" Width="250" Height="30"  FontSize="16"
+                         FontWeight="Medium" HorizontalAlignment="Left"
+                         TextChanged="net_amount_TextChanged"
+                         DataObject.Pasting="net_amount_Pasting"
+                         />
+
+                <TextBlock Grid.Row="3" Grid.Column="2" Text="Tax Amount :" Margin="30,0,0,0"  Padding="20,10,10,0" FontSize="16" FontWeight="Bold"/>
+                <TextBox Name="tax_amount" Margin="20,10,0,0" Grid.Column="4" Grid.Row="3" Width="250" Height="30"  FontSize="16"
+                         FontWeight="Medium" HorizontalAlignment="Left"
+                         IsReadOnly="True"/>
+
+                <TextBlock Grid.Row="4" Grid.Column="0" Text="Total Amount :"  Padding="20,10,10,0" FontSize="16" FontWeight="Bold"/>
+                <TextBox x:Name="total_amount" Margin="20,10,0,0" Grid.Column="1" Grid.Row="4" Width="250" Height="30"
+                         FontSize="16" FontWeight="Medium" HorizontalAlignment="Left"
+                         IsReadOnly="True"/>
+
+                <TextBlock Grid.Row="5" Grid.Column="0" Text="* Cheque No :"  Padding="20,10,10,0" FontSize="16" FontWeight="Bold"/>
+                <TextBox Name="cheque_no" Margin="20,10,0,0" Grid.Column="1" Grid.Row="5" Width="250" Height="30"  FontSize="16" FontWeight="Medium" HorizontalAlignment="Left"/>
+
+                <TextBlock Grid.Row="5" Grid.Column="2" Text="* Cheque Date :" Margin="30,0,0,0"  Padding="20,10,10,0" FontSize="16" FontWeight="Bold"/>
+                <wpfTool:DateTimePicker x:Name="cheque_date" Margin="20,10,0,0" Grid.Column="4" Grid.Row="5" Width="250" Height="30"  FontSize="16"
+                                        FontWeight="Medium" HorizontalAlignment="Left"
+                                        Format="Custom"
+                                        FormatString="M/d/yyy HH:mm"
+                                        TimeFormat="Custom"
+                                        TimeFormatString="HH:mm" 
+                                        ShowButtonSpinner="False"
+                                        AutoCloseCalendar="True"/>
+
+                <TextBlock Grid.Row="6" Grid.Column="0" Text="* Bank Name :"  Padding="20,10,10,0" FontSize="16" FontWeight="Bold"/>
+                <TextBox x:Name="bank_name" Margin="20,10,0,0" Grid.Column="1" Grid.Row="6" Width="710" Height="30"  FontSize="16" FontWeight="Medium"
+                         HorizontalAlignment="Left" Grid.ColumnSpan="3"/>
+
+                <TextBlock Grid.Row="7" Grid.Column="0" Text="* Bill No :"  Padding="20,10,10,0" FontSize="16" FontWeight="Bold"/>
+                <TextBox x:Name="bill_no" Margin="20,10,0,0" Grid.Column="1" Grid.Row="7" Width="250" Height="30"  FontSize="16" FontWeight="Medium" HorizontalAlignment="Left"/>
+
+                <TextBlock Grid.Row="7" Grid.Column="2" Text="* Bill Date :" Margin="30,0,0,0"  Padding="20,10,10,0" FontSize="16" FontWeight="Bold"/>
+                <wpfTool:DateTimePicker x:Name="bill_date" Margin="20,10,0,0" Grid.Column="4" Grid.Row="7" Width="250" Height="30"  FontSize="16"
+                                         FontWeight="Medium" HorizontalAlignment="Left"
+                                         Format="Custom"
+                                         FormatString="M/d/yyy HH:mm"
+                                         TimeFormat="Custom"
+                                         TimeFormatString="HH:mm" 
+                                         ShowButtonSpinner="False"
+                                         AutoCloseCalendar="True"/>
+
+                <TextBlock Grid.Row="8" Grid.Column="0" Text="Remarks :" Margin="0,50,0,0"  Padding="20,10,10,0" FontSize="16" FontWeight="Bold"/>
+                <TextBox x:Name="remark" Margin="20,10,0,0" Grid.Column="1" Grid.Row="8" Width="710" Height="120"  FontSize="16" FontWeight="Medium" HorizontalAlignment="Left" Grid.ColumnSpan="3"/>
+
+            </Grid>
+        </Border>
+
+        <Button Grid.Column="1" Grid.Row="3" Width="150" Height="30"
+                Margin="0,20,0,0" HorizontalAlignment="Left" Background="Green" Click="printToPDF">
+            <Run Text="Print" Foreground="White" FontWeight="Medium" FontSize="16"/>
+        </Button>
+
+
+        <Border
+            x:Name="float_border"
+            BorderThickness="1"    
+            BorderBrush="Green"    
+            CornerRadius="1"    
+            Background="White"    
+            HorizontalAlignment="Left"    
+            VerticalAlignment="Top"    
+            Width="800"
+            Margin="260,60,0,0"
+            Height="400"
+            Grid.Column="1"
+            Grid.Row="2"
+            Panel.ZIndex="0"
+            Visibility="Hidden">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+
+                <Button x:Name="modal_cls_btn" Content="Close" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" Click="modal_cls_btn_Click" Grid.ColumnSpan="2"/>
+                <DataGrid Name="party_model_view" Grid.Column="1" Grid.Row="1"
+                          HorizontalScrollBarVisibility="Visible"  
+                          VerticalScrollBarVisibility="Visible"
+                          CanUserReorderColumns="False"
+                          IsReadOnly="True"  
+                          AutoGenerateColumns="False">
+                    <DataGrid.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <EventSetter Event="MouseDoubleClick" Handler="ClickonDataGrid"/>
+                        </Style>
+                    </DataGrid.CellStyle>
+                    
+                    
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Jewller Name" Width="200" Binding="{Binding jewller_name}"/>
+                        <DataGridTextColumn Header="Licinse Number" Width="180" Binding="{Binding cml_no}"/>
+                        <DataGridTextColumn Header="Address" Width="250" Binding="{Binding address}"/>
+                        <DataGridTextColumn Header="GST No" Width="150" Binding="{Binding gst_no}"/>
+                        <DataGridTextColumn Header="id" Binding="{Binding id}" Visibility="Hidden"/>
+
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Border>
+    </Grid>
+
+    
+
+</UserControl>
