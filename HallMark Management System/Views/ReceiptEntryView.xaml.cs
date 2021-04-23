@@ -33,6 +33,9 @@ namespace HallMark_Management_System.Views
     {
 
         private PartyTableService partyService = new PartyTableService();
+        private ReceiptEntryMasterTableService receiptEntryMasterTableService = new ReceiptEntryMasterTableService();
+        private ReceiptEntryThreadTableService receiptEntryThreadTableService = new ReceiptEntryThreadTableService();
+
         private int sumTotalPcs = 0;
         private int sumGrossWt = 0;
         private int sumNetWt = 0;
@@ -40,13 +43,32 @@ namespace HallMark_Management_System.Views
         public ReceiptEntryView()
         {
             InitializeComponent();
-
+            SetSrNo();
             initializeGridtable();
         }
 
         public event NotifyCollectionChangedEventHandler CollectionChanged;
 
         public Session session = new Session();
+
+        public string SetSrNo()
+        {
+            List<String> reversedIds = receiptEntryMasterTableService.findAllIdReverse();
+
+            if (reversedIds.Count == 0)
+            {
+                sr_no.Text = "1";
+            }
+            else
+            {
+                foreach(String eachId in reversedIds)
+                {
+                    sr_no.Text = Convert.ToString(Int32.Parse(eachId)+1);
+                    break;
+                }
+            }
+            return "";
+        }
 
         private void initializeGridtable()
         {
@@ -55,6 +77,9 @@ namespace HallMark_Management_System.Views
             if (gridData.Items.Count == 0)
             {
                 gdata.srNo = "1";
+                gdata.masterId = sr_no.Text;
+
+
                 gridDataList.Add(gdata);
             }
             else
@@ -89,6 +114,18 @@ namespace HallMark_Management_System.Views
         private void JewlleryGridExceptionAlert()
         {
             MessageBox.Show("Only Numbers allowed !!");
+        }
+
+        private void DataSavedAlert()
+        {
+            MessageBox.Show("Data Saved !!");
+
+        }
+
+        private void DataNotSaved()
+        {
+            MessageBox.Show("Data Not Saved, Atleast one Jewllery Information is requried");
+
         }
 
         /*
@@ -177,7 +214,7 @@ namespace HallMark_Management_System.Views
        
         }
 
-        private void showJeweller(object sender)
+/*        private void showJeweller(object sender)
         {
             var cell = sender as DataGridCell;
 
@@ -189,7 +226,7 @@ namespace HallMark_Management_System.Views
                 var binding = BindingOperations.GetBindingExpression(textBlock, TextBlock.TextProperty);
                 binding.UpdateSource();
             }
-        }
+        }*/
 
         private IEnumerable<DataGridRow> GetDataGridRowsForButtons(DataGrid grid)
         { //IQueryable
@@ -216,10 +253,10 @@ namespace HallMark_Management_System.Views
                 //Grid Code
                 //Console.WriteLine("TRUE");
 
-                if (jewlleryDetailsGrid.Visibility == Visibility.Hidden)
+                if (jewlleryDetailsBorder.Visibility == Visibility.Hidden)
                 {
-                    jewlleryDetailsGrid.Visibility = Visibility.Visible;
-                    Panel.SetZIndex(jewlleryDetailsGrid, 1);
+                    jewlleryDetailsBorder.Visibility = Visibility.Visible;
+                    Panel.SetZIndex(jewlleryDetailsBorder, 1);
 
                     List<ProductModel> productList = findAllProduct();
 
@@ -227,7 +264,8 @@ namespace HallMark_Management_System.Views
 
                     foreach (ProductModel each_item in productList)
                     {
-                        jewelleryModal.Add(new Views.jewelleryModal() { jewlleryName = each_item.product_name, purity = each_item.purity });
+                        jewelleryModal.Add(new Views.jewelleryModal() { jewlleryName = each_item.product_name, purity = each_item.purity
+                        ,Id = each_item.ID});
                     }
 
                     jewlleryDetailsGrid.ItemsSource = jewelleryModal;
@@ -253,7 +291,7 @@ namespace HallMark_Management_System.Views
                     foreach (PartyModel eachData in partyModel)
                     {
                         jewellerDetailsDataGrids.Add(new JewellerDetailsDataGrid() { jewller_name = eachData.jewller_name,
-                            cml_no = eachData.cml_no, gst_no = eachData.gst_no,address = eachData.address });
+                            cml_no = eachData.cml_no, gst_no = eachData.gst_no,address = eachData.address, Id=eachData.ID });
                     }
 
                     jewellerDetailsDataGrid.ItemsSource = jewellerDetailsDataGrids;
@@ -277,7 +315,7 @@ namespace HallMark_Management_System.Views
 
         private void name_of_jeweller_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Console.WriteLine("I GOT CLCKED");
+            //Console.WriteLine("I GOT CLCKED");
             session.isGridClick = false;
         }
 
@@ -291,6 +329,7 @@ namespace HallMark_Management_System.Views
         {
             String jewlleryName = "";
             Double purity = 0.0;
+            String productTableID = "";
             for (var vis = sender as Visual; vis != null; vis = VisualTreeHelper.GetParent(vis) as Visual)
                 if (vis is DataGridRow)
                 {
@@ -305,6 +344,7 @@ namespace HallMark_Management_System.Views
                             //id = (dr.Item as ModalModel).id;
                             jewlleryName = (dr.Item as jewelleryModal).jewlleryName;
                             purity = Convert.ToDouble((dr.Item as jewelleryModal).purity);
+                            productTableID = Convert.ToString((dr.Item as jewelleryModal).Id);
                         }
                         catch (Exception ex)
                         {
@@ -319,11 +359,13 @@ namespace HallMark_Management_System.Views
         //    Console.WriteLine(gridData.SelectedItems);
            (gridData.SelectedCells[0].Item as GridData).nameOfJewllery = jewlleryName;
            (gridData.SelectedCells[0].Item as GridData).declearedPurity = (float)purity;
+            Console.WriteLine(productTableID);
+           (gridData.SelectedCells[0].Item as GridData).productTableID = productTableID;
 
             gridData.Items.Refresh();
 
-            jewlleryDetailsGrid.Visibility = Visibility.Hidden;
-            Panel.SetZIndex(jewlleryDetailsGrid, -1);
+            jewlleryDetailsBorder.Visibility = Visibility.Hidden;
+            Panel.SetZIndex(jewlleryDetailsBorder, -1);
 
 
             /*  cellInfo.Column.SetCurrentValue(TextBlock.TextProperty,jewlleryName);
@@ -337,7 +379,8 @@ namespace HallMark_Management_System.Views
         {
             e.NewItem = new GridData
             {
-                srNo = String.Concat(sender.ToString().Split(':')[1].Where(c => !Char.IsWhiteSpace(c)))
+                srNo = String.Concat(sender.ToString().Split(':')[1].Where(c => !Char.IsWhiteSpace(c))),
+                masterId = sr_no.Text
             };
         }
 
@@ -349,6 +392,7 @@ namespace HallMark_Management_System.Views
             string localCml_no = "";
             string localGts_no = "";
             string locaAddress = "";
+            int hidden_jewller_id = 0;
 
             for (var vis = sender as Visual; vis != null; vis = VisualTreeHelper.GetParent(vis) as Visual)
                 if (vis is DataGridRow)
@@ -368,6 +412,7 @@ namespace HallMark_Management_System.Views
                             localCml_no = (dr.Item as JewellerDetailsDataGrid).cml_no;
                             localGts_no = (dr.Item as JewellerDetailsDataGrid).gst_no;
                             locaAddress = (dr.Item as JewellerDetailsDataGrid).address;
+                            hidden_jewller_id = (dr.Item as JewellerDetailsDataGrid).Id;
 
                         }
                         catch (Exception ex)
@@ -386,6 +431,7 @@ namespace HallMark_Management_System.Views
                 address.Text = locaAddress;
                 cml_no.Text = localCml_no;
                 gst_no.Text = localGts_no;
+                jewller_id_hidden.Text = Convert.ToString(hidden_jewller_id);
 
                 JewllerInformationBorder.Visibility = Visibility.Hidden;
                 Panel.SetZIndex(JewllerInformationBorder, -1);
@@ -397,6 +443,102 @@ namespace HallMark_Management_System.Views
         {
             JewllerInformationBorder.Visibility = Visibility.Hidden;
             Panel.SetZIndex(JewllerInformationBorder, -1);
+        }
+
+
+        // On Save Btn click function
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            // Save Datato Database
+            // Master Model
+            ReceiptEntryMasterModel receiptEntryMasterModel = new ReceiptEntryMasterModel();
+            // Thread Model
+            List<ReceiptEntryThreadModel> receiptEntryThreadModelList = new List<ReceiptEntryThreadModel>();
+
+            if (receiptEntryMasterTableService.findByID(Int32.Parse(sr_no.Text)).Count == 0)
+            {
+                // If count is zero the new entry
+
+                try
+                {
+                    receiptEntryMasterModel.jeweller_id = Int32.Parse(jewller_id_hidden.Text);
+                }
+                catch (Exception ex)
+                {
+                    // Manual Entry Catch
+
+                }
+
+                receiptEntryMasterModel.receipt_date = receipt_date.Text;
+                receiptEntryMasterModel.issue_voucher_no = issue_voucher_no.Text;
+                receiptEntryMasterModel.delivery_by = delivery_by.Text;
+                receiptEntryMasterModel.delivery_date = delivery_date.Text;
+                receiptEntryMasterModel.box_no = box_no.Text;
+                receiptEntryMasterModel.previous_box_no = previous_box_no.Text;
+                receiptEntryMasterModel.customer_name = customer_name.Text;
+                receiptEntryMasterModel.ILC_receipt = (bool)ilcReceipt.IsChecked;
+
+                //GridData ridData = gridData.Items;
+                List<GridData> threadDataList = gridData.Items.OfType<GridData>().ToList();
+                foreach (GridData data in threadDataList)
+                {
+                    ReceiptEntryThreadModel newReceiptEntryThreadModel = new ReceiptEntryThreadModel();
+                    //Console.WriteLine(data.nameOfJewllery);
+                    try
+                    {
+                        newReceiptEntryThreadModel.jewllery_id = Int32.Parse(data.productTableID);
+                        newReceiptEntryThreadModel.total_pcs = Convert.ToString(data.totalPcs);
+                        newReceiptEntryThreadModel.gross_wt = Convert.ToString(data.grossWt);
+                        newReceiptEntryThreadModel.net_wt = Convert.ToString(data.netWt);
+                        newReceiptEntryThreadModel.msphc_wt = Convert.ToString(data.msphcWt);
+                        newReceiptEntryThreadModel.receipt_entry_master_id = Int32.Parse(data.masterId);
+                        newReceiptEntryThreadModel.remark = data.remark;
+                    }
+                    catch(Exception ex)
+                    {
+                        Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(this.DataNotSaved));
+                        return;
+                    }
+
+
+                    receiptEntryThreadModelList.Add(newReceiptEntryThreadModel);
+
+                }
+
+                Boolean result = receiptEntryMasterTableService.SaveAllData(receiptEntryMasterModel);
+
+                if (result == true)
+                {
+                    Boolean returnValue = receiptEntryThreadTableService.SaveAllData(receiptEntryThreadModelList);
+
+                    if (returnValue == true)
+                    {
+                        Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(this.DataSavedAlert));
+
+                    }
+                }
+            }
+            else
+            {
+                // Update Old data
+                Console.WriteLine("Update HIT");
+
+            }
+
+
+
+
+
+
+
+        }
+
+        private void jewlleryDetailsGridCloseButon_Click(object sender, RoutedEventArgs e)
+        {
+
+            jewlleryDetailsBorder.Visibility = Visibility.Hidden;
+            Panel.SetZIndex(jewlleryDetailsBorder, -1);
+
         }
     }
 
@@ -412,6 +554,10 @@ namespace HallMark_Management_System.Views
         public float msphcWt { get; set; }
         public string remark { get; set; }
 
+        public string masterId { get; set; }
+
+        public string productTableID { get; set; }
+
         public static implicit operator List<object>(GridData v)
         {
             throw new NotImplementedException();
@@ -420,6 +566,7 @@ namespace HallMark_Management_System.Views
 
     public class jewelleryModal
     {
+        public int Id { get; set; }
         public string jewlleryName { get; set; }
         public string purity { get; set; }
     }
@@ -431,6 +578,7 @@ namespace HallMark_Management_System.Views
 
     public class JewellerDetailsDataGrid
     {
+        public int Id { get; set; }
         public String jewller_name { get; set; }
 
         public String cml_no { get; set; }

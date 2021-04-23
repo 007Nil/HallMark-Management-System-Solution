@@ -80,6 +80,11 @@ namespace HallMark_Management_System.Views
             MessageBox.Show("* Marked Options are requried !!");
         }
 
+        private void DataSavedAlert()
+        {
+            MessageBox.Show("* Data Saved !!");
+        }
+
 
         public static List<String> countCompanyTableTupples()
         {
@@ -144,6 +149,8 @@ namespace HallMark_Management_System.Views
                 companyModel.invoice_code = invoice_code.Text;
 
                 addACompany(companyModel);
+
+                Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(this.DataSavedAlert));
 
 
             }
