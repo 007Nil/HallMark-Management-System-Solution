@@ -104,7 +104,7 @@ namespace HallMark_Management_System.Views
                 String text = (String)e.DataObject.GetData(typeof(String));
                 if (!IsTextAllowed(text))
                 {
-                    Console.WriteLine("HIT");
+                    //Console.WriteLine("HIT");
                     e.CancelCommand();
                     net_amount.Text = "";
                 }
@@ -233,29 +233,34 @@ namespace HallMark_Management_System.Views
                 //Console.WriteLine("INTO CLICKONDATAGRID");
                 int id = 0;
                 String jeweller = "";
-                for (var vis = sender as Visual; vis != null; vis = VisualTreeHelper.GetParent(vis) as Visual)
-                    if (vis is DataGridRow)
-                    {
-                        //Console.WriteLine("Into FOR LOOP");
-                        var rows = GetDataGridRowsForButtons(party_model_view);
-                        //Console.WriteLine("AFTER FOR LOOP");
-                        foreach (DataGridRow dr in rows)
-                        {
-                            //Console.WriteLine("INTO FOREACH");
-                            try
-                            {
-                                id = (dr.Item as ModalModel).id;
-                                jeweller = (dr.Item as ModalModel).jewller_name;
-                            }catch (Exception ex)
-                            {
-                                return;
-                            }
-                            //Console.WriteLine(jeweller);
-                            break;
-                        }
-                        break;
-                        //jeweller = (rows.Item as ModalModel)
-                    }
+                /*  for (var vis = sender as Visual; vis != null; vis = VisualTreeHelper.GetParent(vis) as Visual)
+                      if (vis is DataGridRow)
+                      {
+                          //Console.WriteLine("Into FOR LOOP");
+                          var rows = GetDataGridRowsForButtons(party_model_view);
+                          //Console.WriteLine("AFTER FOR LOOP");
+                          foreach (DataGridRow dr in rows)
+                          {
+                              //Console.WriteLine("INTO FOREACH");
+                              try
+                              {
+                                  id = (dr.Item as ModalModel).id;
+                                  jeweller = (dr.Item as ModalModel).jewller_name;
+                              }catch (Exception ex)
+                              {
+                                  return;
+                              }
+                              //Console.WriteLine(jeweller);
+                              break;
+                          }
+                          break;
+                          //jeweller = (rows.Item as ModalModel)
+                      }*/
+
+                ModalModel model = party_model_view.SelectedItem as ModalModel;
+
+                jeweller = model.jewller_name;
+                id = model.id;
                 if (!string.IsNullOrEmpty(jeweller) && id !=0)
                 {
                    /* Console.WriteLine(jeweller);
@@ -278,9 +283,15 @@ namespace HallMark_Management_System.Views
             if (null == itemsSource) yield return null;
            
             foreach (var item in itemsSource)
-            { 
-                var row = grid.ItemContainerGenerator.ContainerFromItem(item) as DataGridRow;
-                if (null != row & row.IsSelected) yield return row;
+            {
+                /*  grid.ScrollIntoView(grid.Items[grid.Items.Count - 1]);
+                  grid.UpdateLayout();
+                  grid.ScrollIntoView(grid.SelectedItem);*/
+              
+                    var row = grid.ItemContainerGenerator.ContainerFromItem(item) as DataGridRow;
+                    if (null != row & row.IsSelected) yield return row;
+               
+              
             }
         }
 

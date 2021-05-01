@@ -139,4 +139,6 @@ D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\o
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\HallMark Management System.csproj.CopyComplete
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\HallMark Management System.exe
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\HallMark Management System.pdb
+D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\ReceiptEntryPDFView.g.cs
+D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\ReceiptEntryPDFView.baml
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\HallMark Management System.csprojAssemblyReference.cache

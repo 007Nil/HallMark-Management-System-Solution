@@ -36,7 +36,8 @@
         </DataTemplate>
 
     </Window.Resources>
-    <Grid>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" >
+        <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
@@ -84,5 +85,6 @@
 
     </Grid>
 
-    
+    </ScrollViewer>
+
 </Window>

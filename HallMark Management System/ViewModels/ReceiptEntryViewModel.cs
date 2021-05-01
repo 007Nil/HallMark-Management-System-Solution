@@ -19,6 +19,10 @@ namespace HallMark_Management_System.ViewModels
         private string sumOfToatlPcs1;
 
         public string sumOfToatlPcs { get => sumOfToatlPcs1; set => Set(ref sumOfToatlPcs1, value); }
+
+        private System.Collections.IEnumerable gridDataList1;
+
+        public System.Collections.IEnumerable gridDataList { get => gridDataList1; set => Set(ref gridDataList1, value); }
         //  public ObservableCollection<GridData> GridData { get; set; }
     }
 }

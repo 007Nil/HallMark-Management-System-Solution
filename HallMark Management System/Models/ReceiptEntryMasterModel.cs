@@ -22,6 +22,8 @@ namespace HallMark_Management_System.Models
         public string customer_name { get; set; }
         public Boolean ILC_receipt { get; set; }
 
+        public Boolean is_valid { get; set; }
+
 
 
     }

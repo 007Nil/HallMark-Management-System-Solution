@@ -47,7 +47,17 @@ namespace HallMark_Management_System.Service
             using (IDbConnection cnn = new SQLiteConnection(connectToDatabaseService.LoadConnectionString()))
             {
 
-                var queryResult = cnn.Query<ReceiptEntryMasterModel>(" SELECT * FROM ReceiptEntryMaster_table where Id="+ID+";", new DynamicParameters());
+                var queryResult = cnn.Query<ReceiptEntryMasterModel>(" SELECT * FROM ReceiptEntryMaster_table where Id="+ID+ " AND is_valid=1;", new DynamicParameters());
+                return queryResult.ToList();
+            }
+        }
+
+        public List<ReceiptEntryMasterModel> findAll()
+        {
+            using (IDbConnection cnn = new SQLiteConnection(connectToDatabaseService.LoadConnectionString()))
+            {
+
+                var queryResult = cnn.Query<ReceiptEntryMasterModel>(" SELECT * FROM ReceiptEntryMaster_table where is_valid=1;", new DynamicParameters());
                 return queryResult.ToList();
             }
         }

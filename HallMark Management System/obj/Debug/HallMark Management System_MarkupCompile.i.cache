@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\App.xaml
-9-1584617877
+10-1965469153
 
-40-1987670040
+45-1774861061
 1391246887898
-Views\BlankView.xaml;Views\CompanyView.xaml;Views\FundEntryView.xaml;Views\FundReceiptPDFView.xaml;Views\PartyView.xaml;Views\ProductView.xaml;Views\ReceiptEntryView.xaml;Views\ShellView.xaml;Views\TestingView.xaml;
+Views\BlankView.xaml;Views\CompanyView.xaml;Views\FundEntryView.xaml;Views\FundReceiptPDFView.xaml;Views\PartyView.xaml;Views\ProductView.xaml;Views\ReceiptEntryPDFView.xaml;Views\ReceiptEntryView.xaml;Views\ShellView.xaml;Views\TestingView.xaml;
 
-False
+True
 

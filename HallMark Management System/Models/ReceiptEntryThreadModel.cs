@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HallMark_Management_System.Models
 {
-    class ReceiptEntryThreadModel
+    public class ReceiptEntryThreadModel
     {
         public int Id { get; set; }
         public int jewllery_id { get; set; }
@@ -17,5 +17,7 @@ namespace HallMark_Management_System.Models
         public string net_wt { get; set; }
         public string msphc_wt { get; set; }
         public string remark { get; set; }
+
+        public Boolean is_valid { get; set; }
     }
 }
