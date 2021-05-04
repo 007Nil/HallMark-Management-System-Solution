@@ -122,61 +122,69 @@
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Column="0" Grid.Row="0" Text="* Name :" Padding="20,10,20,0" FontSize="16" FontWeight="Bold"/>
-                <TextBox x:Name="customer_name" Margin="20,10,0,0" Grid.Column="1" Grid.Row="0" Width="720" Height="30"  FontSize="16" FontWeight="Medium" Grid.ColumnSpan="3"/>
+                <TextBox x:Name="customer_name" Margin="20,10,0,0" Grid.Column="1" Grid.Row="0"
+                         Width="720" Height="30"
+                         FontSize="16" FontWeight="Medium" Grid.ColumnSpan="3"/>
 
-                <TextBlock Grid.Column="0" Grid.Row="1" Text="* Address :" Padding="20,10,20,0" FontSize="16" FontWeight="Bold"/>
+                <TextBlock  Grid.Column="0" Grid.Row="1" Text="* Short Name" Padding="20,10,20,0" FontSize="16" FontWeight="Bold"/>
+                <TextBox x:Name="shortName" Margin="20,10,0,0" Grid.Column="1" Grid.Row="1"
+                         Width="720" Height="30"
+                         FontSize="16" FontWeight="Medium" Grid.ColumnSpan="3"/>
+                
+                <TextBlock Grid.Column="0" Grid.Row="2" Text="* Address :" Padding="20,10,20,0" FontSize="16" FontWeight="Bold"/>
 
                 <TextBox Name="address" TextWrapping="Wrap" AcceptsReturn="True"
                      VerticalScrollBarVisibility="Visible"
-                     Margin="20,10,0,0" Grid.Column="1" Grid.Row="1"
+                     Margin="20,10,0,0" Grid.Column="1" Grid.Row="2"
                      Height="50"  Grid.ColumnSpan="3"/>
 
-                <TextBlock Grid.Column="0" Grid.Row="2" Text="* City :" Padding="20,10,10,0" FontSize="16" FontWeight="Bold"/>
-                <TextBox x:Name="city" Margin="20,10,0,0" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="2" Width="300" Height="30"  FontSize="16" FontWeight="Medium"/>
+                <TextBlock Grid.Column="0" Grid.Row="3" Text="* City :" Padding="20,10,10,0" FontSize="16" FontWeight="Bold"/>
+                <TextBox x:Name="city" Margin="20,10,0,0" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="3" Width="300" Height="30"  FontSize="16" FontWeight="Medium"/>
 
-                <TextBlock Grid.Column="2" Grid.Row="2" Text="* Pin :" Padding="10,10,0,0" FontSize="16" FontWeight="Bold"/>
-                <TextBox x:Name="pin" Margin="10,10,0,0" HorizontalAlignment="Left" Grid.Column="3" Grid.Row="2" Width="300" Height="30"  FontSize="16" FontWeight="Medium"/>
+                <TextBlock Grid.Column="2" Grid.Row="3" Text="* Pin :" Padding="10,10,0,0" FontSize="16" FontWeight="Bold"/>
+                <TextBox x:Name="pin" Margin="10,10,0,0" HorizontalAlignment="Left" Grid.Column="3" Grid.Row="3" Width="300" Height="30"  FontSize="16" FontWeight="Medium"/>
 
-                <TextBlock Grid.Column="0" Grid.Row="3" Text="* State :" Padding="20,10,0,0" FontSize="16" FontWeight="Bold"/>
-                <TextBox x:Name="state" Margin="20,10,0,0" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="3" Width="300" Height="30"  FontSize="16" FontWeight="Medium"/>
+                <TextBlock Grid.Column="0" Grid.Row="4" Text="* State :" Padding="20,10,0,0" FontSize="16" FontWeight="Bold"/>
+                <TextBox x:Name="state" Margin="20,10,0,0" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="4" Width="300" Height="30"  FontSize="16" FontWeight="Medium"/>
 
-                <TextBlock Grid.Column="2" Grid.Row="3" Text="Mobile :" Padding="10,10,0,0" FontSize="16" FontWeight="Bold" Foreground="Purple"/>
-                <TextBox x:Name="mobile" Margin="10,10,0,0" HorizontalAlignment="Left" Grid.Column="3" Grid.Row="3" Width="300" Height="30"  FontSize="16" FontWeight="Medium"/>
+                <TextBlock Grid.Column="2" Grid.Row="4" Text="Mobile :" Padding="10,10,0,0" FontSize="16" FontWeight="Bold" Foreground="Purple"/>
+                <TextBox x:Name="mobile" Margin="10,10,0,0" HorizontalAlignment="Left" Grid.Column="3" Grid.Row="4" Width="300" Height="30"  FontSize="16" FontWeight="Medium"/>
 
-                <TextBlock Grid.Column="0" Grid.Row="4" Text="Phone (0) :" Padding="20,10,0,0" FontSize="16" FontWeight="Bold" Foreground="Purple"/>
-                <TextBox x:Name="phone_0" Margin="20,10,0,0" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="4" Width="300" Height="30"  FontSize="16" FontWeight="Medium"/>
+                <TextBlock Grid.Column="0" Grid.Row="5" Text="Phone (0) :" Padding="20,10,0,0" FontSize="16" FontWeight="Bold" Foreground="Purple"/>
+                <TextBox x:Name="phone_0" Margin="20,10,0,0" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="5" Width="300" Height="30"  FontSize="16" FontWeight="Medium"/>
 
-                <TextBlock Grid.Column="2" Grid.Row="4" Text="Phone (1) :" Padding="10,10,0,0" FontSize="16" FontWeight="Bold" Foreground="Purple"/>
-                <TextBox  x:Name="phone_1" Margin="10,10,0,0" HorizontalAlignment="Left" Grid.Column="4" Grid.Row="4" Width="300" Height="30"  FontSize="16" FontWeight="Medium"/>
+                <TextBlock Grid.Column="2" Grid.Row="5" Text="Phone (1) :" Padding="10,10,0,0" FontSize="16" FontWeight="Bold" Foreground="Purple"/>
+                <TextBox  x:Name="phone_1" Margin="10,10,0,0" HorizontalAlignment="Left" Grid.Column="4" Grid.Row="5" Width="300" Height="30"  FontSize="16" FontWeight="Medium"/>
 
-                <TextBlock Grid.Column="0" Grid.Row="5" Text="* Email :" Padding="20,10,0,0" FontSize="16" FontWeight="Bold" Foreground="Purple"/>
-                <TextBox x:Name="email" Margin="20,10,0,0" Grid.Column="1" Grid.Row="5" Width="720" Height="30"  FontSize="16" FontWeight="Medium" Grid.ColumnSpan="3"/>
+                <TextBlock Grid.Column="0" Grid.Row="6" Text="* Email :" Padding="20,10,0,0" FontSize="16" FontWeight="Bold" Foreground="Purple"/>
+                <TextBox x:Name="email" Margin="20,10,0,0" Grid.Column="1" Grid.Row="6" Width="720" Height="30"  FontSize="16" FontWeight="Medium" Grid.ColumnSpan="3"/>
 
-                <TextBlock Grid.Column="0" Grid.Row="6" Text="GST. No. :" Padding="20,10,0,0" FontSize="16" FontWeight="Bold" Foreground="Purple"/>
-                <TextBox  x:Name="gst_no"  Margin="20,10,0,0" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="6" Width="300" Height="30"  FontSize="16" FontWeight="Medium"/>
-
-
-                <TextBlock Grid.Column="2" Grid.Row="6" Text="PAN No :" Padding="10,10,0,0" FontSize="16" FontWeight="Bold" Foreground="Purple"/>
-                <TextBox x:Name="pan_no" Margin="10,10,0,0" HorizontalAlignment="Left" Grid.Column="4" Grid.Row="6" Width="300" Height="30"  FontSize="16" FontWeight="Medium"/>
+                <TextBlock Grid.Column="0" Grid.Row="7" Text="GST. No. :" Padding="20,10,0,0" FontSize="16" FontWeight="Bold" Foreground="Purple"/>
+                <TextBox  x:Name="gst_no"  Margin="20,10,0,0" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="7" Width="300" Height="30"  FontSize="16" FontWeight="Medium"/>
 
 
-                <TextBlock Grid.Column="0" Grid.Row="7" Text="Place Of Supply :" Padding="20,10,0,0" FontSize="16" FontWeight="Bold" Foreground="Purple"/>
-                <TextBox x:Name="place_of_supply"  Margin="20,10,0,0" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="7" Width="300" Height="30"  FontSize="16" FontWeight="Medium"/>
+                <TextBlock Grid.Column="2" Grid.Row="7" Text="PAN No :" Padding="10,10,0,0" FontSize="16" FontWeight="Bold" Foreground="Purple"/>
+                <TextBox x:Name="pan_no" Margin="10,10,0,0" HorizontalAlignment="Left" Grid.Column="4" Grid.Row="7" Width="300" Height="30"  FontSize="16" FontWeight="Medium"/>
 
 
-                <TextBlock Grid.Column="2" Grid.Row="7" Text="State Code :" Padding="10,10,0,0" FontSize="16" FontWeight="Bold" Foreground="Purple"/>
-                <TextBox x:Name="state_code" Margin="10,10,0,0" HorizontalAlignment="Left" Grid.Column="4" Grid.Row="7" Width="300" Height="30"  FontSize="16" FontWeight="Medium"/>
+                <TextBlock Grid.Column="0" Grid.Row="8" Text="Place Of Supply :" Padding="20,10,0,0" FontSize="16" FontWeight="Bold" Foreground="Purple"/>
+                <TextBox x:Name="place_of_supply"  Margin="20,10,0,0" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="8" Width="300" Height="30"  FontSize="16" FontWeight="Medium"/>
 
 
-                <TextBlock Grid.Column="0" Grid.Row="8" Text="License No :" Padding="20,10,0,0" FontSize="16" FontWeight="Bold" Foreground="Purple"/>
-                <TextBox x:Name="license_no" Margin="20,10,0,0" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="8" Width="300" Height="30"  FontSize="16" FontWeight="Medium"/>
+                <TextBlock Grid.Column="2" Grid.Row="8" Text="State Code :" Padding="10,10,0,0" FontSize="16" FontWeight="Bold" Foreground="Purple"/>
+                <TextBox x:Name="state_code" Margin="10,10,0,0" HorizontalAlignment="Left" Grid.Column="4" Grid.Row="8" Width="300" Height="30"  FontSize="16" FontWeight="Medium"/>
 
 
-                <TextBlock Grid.Column="2" Grid.Row="8" Text="Invoice Code :" Padding="10,10,0,0" FontSize="16" FontWeight="Bold" Foreground="Purple"/>
-                <TextBox x:Name="invoice_code" Margin="10,10,0,0" HorizontalAlignment="Left" Grid.Column="4" Grid.Row="8" Width="300" Height="30"  FontSize="16" FontWeight="Medium"/>
+                <TextBlock Grid.Column="0" Grid.Row="9" Text="License No :" Padding="20,10,0,0" FontSize="16" FontWeight="Bold" Foreground="Purple"/>
+                <TextBox x:Name="license_no" Margin="20,10,0,0" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="9" Width="300" Height="30"  FontSize="16" FontWeight="Medium"/>
+
+
+                <TextBlock Grid.Column="2" Grid.Row="9" Text="Invoice Code :" Padding="10,10,0,0" FontSize="16" FontWeight="Bold" Foreground="Purple"/>
+                <TextBox x:Name="invoice_code" Margin="10,10,0,0" HorizontalAlignment="Left" Grid.Column="4" Grid.Row="9" Width="300" Height="30"  FontSize="16" FontWeight="Medium"/>
 
 
 

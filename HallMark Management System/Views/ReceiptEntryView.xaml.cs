@@ -38,6 +38,8 @@ namespace HallMark_Management_System.Views
         private ReceiptEntryMasterTableService receiptEntryMasterTableService = new ReceiptEntryMasterTableService();
         private ReceiptEntryThreadTableService receiptEntryThreadTableService = new ReceiptEntryThreadTableService();
         private ProductTableService productTableService = new ProductTableService();
+        private JobCardTableService JobCardTableService = new JobCardTableService();
+        private CompanyTableService CompanyTableService = new CompanyTableService();
 
 
 
@@ -283,15 +285,10 @@ namespace HallMark_Management_System.Views
                 }
                 catch (Exception ex)
                 {
-                    Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(this.JewlleryGridExceptionAlert));
+                   /* Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(this.JewlleryGridExceptionAlert));*/
                 }
 
             }
-            else if (string.Equals("SrNo", (string)gridData.SelectedCells[0].Column.Header))
-            {
-                //gridData.Items.Remove(gridData.SelectedItem);
-            }
-
 
         }
 
@@ -506,6 +503,8 @@ namespace HallMark_Management_System.Views
             // Thread Model
             List<ReceiptEntryThreadModel> receiptEntryThreadModelList = new List<ReceiptEntryThreadModel>();
 
+            JobCardModel jobCardModel = new JobCardModel();
+
             if (receiptEntryMasterTableService.findByID(Int32.Parse(sr_no.Text)).Count == 0)
             {
                 // If count is zero the new entry
@@ -565,8 +564,26 @@ namespace HallMark_Management_System.Views
 
                     if (returnValue == true)
                     {
+
                         Dispatcher.BeginInvoke(DispatcherPriority.Normal, new Action(this.DataSavedAlert));
                         this.ResetJewlleryGrid();
+
+                        // Save the data to jobcard table
+                        List<CompanyModel> companyData = CompanyTableService.findAll();
+                        string jobCardNo = "";
+                        foreach(CompanyModel eachData in companyData)
+                        {
+                            jobCardNo = eachData.shortName;
+                            break;
+                        }
+                        DateTime current = DateTime.Now;
+                        jobCardNo += "/"+current.Year+"/"+sr_no.Text;
+
+                        jobCardModel.jewellerID = Int32.Parse(sr_no.Text);
+                        jobCardModel.jobCardNo = jobCardNo;
+
+                        JobCardTableService.insertData(jobCardModel);
+
                     }
                 }
             }

@@ -35,6 +35,18 @@
             <views:ReceiptEntryView DataContext="{Binding}"/>
         </DataTemplate>
 
+        <DataTemplate x:Name="JobCardViewTemplate" DataType="{x:Type viewmodels:JobCardViewModel}">
+            <views:JobCardView DataContext="{Binding}"/>
+        </DataTemplate>
+
+        <DataTemplate x:Name="XRFViewTemplate" DataType="{x:Type viewmodels:XRFViewModel}">
+            <views:XRFView DataContext="{Binding}"/>
+        </DataTemplate>
+
+        <DataTemplate x:Name="SamplingEntryTemplate" DataType="{x:Type viewmodels:SamplingEntryViewModel}">
+            <views:SamplingEntryView DataContext="{Binding}"/>
+        </DataTemplate>
+
     </Window.Resources>
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" >
         <Grid>
@@ -52,9 +64,9 @@
             <MenuItem Margin="10,0,0,0" Header="_Transaction">
                 <MenuItem Name="Fund_Entry" Header="_Fund Entry" Click="Fund_Entry_Click"/>
                 <MenuItem Header="_Receipt Entry" Click="Receipt_Entry_Click"/>
-                <MenuItem Header="_Job Card"/>
-                <MenuItem Header="_XRF"/>
-                <MenuItem Header="_Sampling Entry"/>
+                <MenuItem Header="_Job Card" Click="Job_Card_Click"/>
+                <MenuItem Header="_XRF" Name="XRFView" Click="XRFView_Click"/>
+                <MenuItem Header="_Sampling Entry" Name="SamplingEntry" Click="SamplingEntry_Click"/>
                 <MenuItem Header="_Fire Assay Sheet"/>
                 <MenuItem Header="_Lab Entry"/>
                 <MenuItem Header="_Invoice Entry"/>

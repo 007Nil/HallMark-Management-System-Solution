@@ -11,6 +11,8 @@ namespace HallMark_Management_System.Models
 
         public int ID { get; set; }
         public String customer_name { get; set; }
+
+        public string shortName { get; set; }
         public String Address { get; set; }
         public String City { get; set; }
         public String pin { get; set; }

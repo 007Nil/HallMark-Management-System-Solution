@@ -9,7 +9,7 @@
              d:DesignHeight="768" d:DesignWidth="1366">
     <UserControl.Resources>
         <ResourceDictionary>
-            <RoutedUICommand x:Key="Ctrl1" Text="Another text"/>
+            <RoutedUICommand x:Key="Ctrl1" Text="Another text"/> 
             <RoutedUICommand x:Key="Ctrl2" Text="Another text"/>
         </ResourceDictionary>
     </UserControl.Resources>

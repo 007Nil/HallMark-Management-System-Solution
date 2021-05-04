@@ -69,6 +69,22 @@ D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\o
 D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\HallMark Management System.exe
 D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\HallMark Management System.pdb
 D:\C Sharp Code\HallMark Management System Solution\HallMark Management System\obj\Debug\HallMark Management System.csprojAssemblyReference.cache
+D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\BlankView.g.cs
+D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\CompanyView.g.cs
+D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\FundEntryView.g.cs
+D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\FundReceiptPDFView.g.cs
+D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\JobCardView.g.cs
+D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\PartyView.g.cs
+D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\ProductView.g.cs
+D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\ReceiptEntryPDFView.g.cs
+D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\ReceiptEntryView.g.cs
+D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\ShellView.g.cs
+D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\TestingView.g.cs
+D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\XRFView.g.cs
+D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\App.g.cs
+D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\HallMark Management System_MarkupCompile.cache
+D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\HallMark Management System_MarkupCompile.lref
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\bin\Debug\HallMark.db
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\bin\Debug\HallMark Management System.exe.config
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\bin\Debug\HallMark Management System.exe
@@ -109,29 +125,19 @@ D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\b
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
-D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\BlankView.g.cs
-D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\CompanyView.g.cs
-D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\FundEntryView.g.cs
-D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\FundReceiptPDFView.g.cs
-D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\PartyView.g.cs
-D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\ProductView.g.cs
-D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\ReceiptEntryView.g.cs
-D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\ShellView.g.cs
-D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\TestingView.g.cs
-D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\App.g.cs
-D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\GeneratedInternalTypeHelper.g.cs
-D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\HallMark Management System_MarkupCompile.cache
-D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\HallMark Management System_MarkupCompile.lref
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\App.baml
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\BlankView.baml
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\CompanyView.baml
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\FundEntryView.baml
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\FundReceiptPDFView.baml
+D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\JobCardView.baml
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\PartyView.baml
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\ProductView.baml
+D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\ReceiptEntryPDFView.baml
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\ReceiptEntryView.baml
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\ShellView.baml
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\TestingView.baml
+D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\XRFView.baml
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\HallMark Management System.g.resources
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\HallMark_Management_System.Properties.Resources.resources
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\HallMark Management System.csproj.GenerateResource.cache
@@ -139,6 +145,6 @@ D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\o
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\HallMark Management System.csproj.CopyComplete
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\HallMark Management System.exe
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\HallMark Management System.pdb
-D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\ReceiptEntryPDFView.g.cs
-D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\ReceiptEntryPDFView.baml
+D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\SamplingEntryView.g.cs
+D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\Views\SamplingEntryView.baml
 D:\C Sharp Code\HallMark-Management-System-Solution\HallMark Management System\obj\Debug\HallMark Management System.csprojAssemblyReference.cache

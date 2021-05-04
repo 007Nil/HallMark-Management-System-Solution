@@ -64,6 +64,7 @@
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.2.0.78\lib\net461\Dapper.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.ConfigurationManager, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -88,6 +89,7 @@
     </Reference>
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -100,9 +102,9 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
     <Reference Include="Xceed.Wpf.AvalonDock, Version=4.0.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
       <HintPath>..\packages\Extended.Wpf.Toolkit.4.0.2\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
     </Reference>
@@ -142,6 +144,7 @@
     <Compile Include="Service\CompanyTableService.cs" />
     <Compile Include="Service\ConnectToDatabaseService.cs" />
     <Compile Include="Service\FundTransferTableService.cs" />
+    <Compile Include="Service\JobCardTableService.cs" />
     <Compile Include="Service\PartyTableService.cs" />
     <Compile Include="Service\ProductTableService.cs" />
     <Compile Include="Service\ReceiptEntryMasterTableService.cs" />
@@ -150,13 +153,16 @@
     <Compile Include="ViewModels\CompanyViewModel.cs" />
     <Compile Include="ViewModels\FundEntryViewModel.cs" />
     <Compile Include="ViewModels\FundReceiptPDFViewModel.cs" />
+    <Compile Include="ViewModels\JobCardViewModel.cs" />
     <Compile Include="ViewModels\PartyViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
     <Compile Include="Models\ReceiptEntryMasterModel.cs" />
     <Compile Include="ViewModels\ReceiptEntryPDFViewModel.cs" />
     <Compile Include="ViewModels\ReceiptEntryViewModel.cs" />
+    <Compile Include="ViewModels\SamplingEntryViewModel.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="ViewModels\TestingViewModel.cs" />
+    <Compile Include="ViewModels\XRFViewModel.cs" />
     <Compile Include="Views\BlankView.xaml.cs">
       <DependentUpon>BlankView.xaml</DependentUpon>
     </Compile>
@@ -168,6 +174,10 @@
     </Compile>
     <Compile Include="Views\FundReceiptPDFView.xaml.cs">
       <DependentUpon>FundReceiptPDFView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\JobCardModel.cs" />
+    <Compile Include="Views\JobCardView.xaml.cs">
+      <DependentUpon>JobCardView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PartyView.xaml.cs">
       <DependentUpon>PartyView.xaml</DependentUpon>
@@ -181,11 +191,17 @@
     <Compile Include="Views\ReceiptEntryView.xaml.cs">
       <DependentUpon>ReceiptEntryView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\SamplingEntryView.xaml.cs">
+      <DependentUpon>SamplingEntryView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ShellView.xaml.cs">
       <DependentUpon>ShellView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TestingView.xaml.cs">
       <DependentUpon>TestingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\XRFView.xaml.cs">
+      <DependentUpon>XRFView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -248,6 +264,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\JobCardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PartyView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -264,11 +284,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\SamplingEntryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ShellView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TestingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\XRFView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

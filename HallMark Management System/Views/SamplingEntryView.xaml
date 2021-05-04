@@ -1,0 +1,93 @@
+﻿<UserControl x:Class="HallMark_Management_System.Views.SamplingEntryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HallMark_Management_System.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1366"
+             Background="White">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <ToolBarTray Grid.Row="0" Grid.Column="0" Background="#F0DDF4" Grid.ColumnSpan="3">
+            <ToolBar Background="#F0DDF4">
+                <ToolBar.Style>
+                    <Style TargetType="ToolBar">
+                        <!-- Not Dropdown Button -->
+                        <Setter Property="ToolBarTray.IsLocked" Value="True"/>
+                        <!-- Not Overflow Button -->
+                        <Setter Property="OverflowMode" Value="Never"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ToolBar}">
+                                    <ToolBarPanel IsItemsHost="True" Background="#F0DDF4"/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ToolBar.Style>
+                <Button Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/new.png" Height="30" Width="30" />
+                </Button>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/edit.png" Height="30" Width="30" />
+                </Button>
+                <Button x:Name="btnSave"  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/save.png" Height="30" Width="30" />
+                </Button>
+
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/discard.png" Height="30" Width="30" />
+                </Button>
+
+                <Separator></Separator>
+                <Button Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/reload.png" Height="30" Width="30" />
+                </Button>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/search.png" Height="30" Width="30" />
+                </Button>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/print.png" Height="30" Width="30" />
+                </Button>
+                <Separator></Separator>
+                <Button Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/up.png" Height="30" Width="30" />
+                </Button>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/right.png" Height="30" Width="30" />
+                </Button>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/left.png" Height="30" Width="30" />
+                </Button>
+
+                <Button Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/down.png" Height="30" Width="30" />
+                </Button>
+                <Separator></Separator>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/close.png" Height="30" Width="30" />
+                </Button>
+                <Button  Margin="10,0,0,0">
+                    <Image Source="/Images/toolbargraphics/poweroff.png" Height="30" Width="30" />
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+
+        <TextBlock Text="Sampling Entry" Grid.Column="1" Grid.Row="1"/>
+
+
+    </Grid>
+</UserControl>

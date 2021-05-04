@@ -56,5 +56,21 @@ namespace HallMark_Management_System.Views
         {
             DataContext = new ReceiptEntryViewModel();
         }
+
+        private void Job_Card_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new JobCardViewModel();
+        }
+
+        private void XRFView_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new XRFViewModel();
+        }
+
+        private void SamplingEntry_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new SamplingEntryViewModel();
+
+        }
     }
 }

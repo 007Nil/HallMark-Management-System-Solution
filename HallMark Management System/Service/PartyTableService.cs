@@ -31,6 +31,15 @@ namespace HallMark_Management_System.Service
             }
         }
 
+        public List<PartyModel> findById(int id)
+        {
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                var queryResult = cnn.Query<PartyModel>("select * from Party_table where ID=" + id + ";", new DynamicParameters());
+                return queryResult.ToList();
+            }
+        }
+
         private static String LoadConnectionString(string id = "Default")
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;

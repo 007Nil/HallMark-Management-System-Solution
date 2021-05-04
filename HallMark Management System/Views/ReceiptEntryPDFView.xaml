@@ -256,9 +256,12 @@
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTextColumn Header="No Of Pices" Width="80" Binding="{Binding Path=no_of_pices}"/>
+                                    <DataGridTextColumn Header="No Of  &#x0a; Pices" Width="60" Binding="{Binding Path=no_of_pices}"/>
                                     <DataGridTextColumn Header="Customer" Width="80" Binding="{Binding Path=customer_wt}"/>
-                                    <DataGridTextColumn Header="Hallmaek Center" Width="100" Binding="{Binding Path=hallmark_wt}"/>
+                                    <DataGridTextColumn Header="Hallmaek &#x0a; Center" Width="60" Binding="{Binding Path=hallmark_wt}">
+                                        
+                                    </DataGridTextColumn>
+
                                     <DataGridTextColumn Header="Decleard Purity" Width="100" Binding="{Binding Path=purity}"/>
                                     <DataGridTemplateColumn Header="Remark" Width="94">
                                         <DataGridTemplateColumn.CellTemplate>

@@ -71,6 +71,7 @@ namespace HallMark_Management_System.Views
                     state_code.Text = each_data.state_code;
                     license_no.Text = each_data.license_no;
                     invoice_code.Text = each_data.invoice_code;
+                    shortName.Text = each_data.shortName;
                 }
             }
         }
@@ -107,9 +108,9 @@ namespace HallMark_Management_System.Views
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("INSERT INTO Company_table (customer_name,Address,City,pin,state,mobile,phone_0,phone_1,email," +
+                cnn.Execute("INSERT INTO Company_table (customer_name,shortName,Address,City,pin,state,mobile,phone_0,phone_1,email," +
                     "gst_no,pan_no,place_of_supply,state_code,license_no,invoice_code) " +
-                    "VALUES (@customer_name,@Address,@City,@pin,@state,@mobile,@phone_0,@phone_1,@email," +
+                    "VALUES (@customer_name,@shortName,@Address,@City,@pin,@state,@mobile,@phone_0,@phone_1,@email," +
                     "@gst_no,@pan_no,@place_of_supply,@state_code,@license_no,@invoice_code)", companyData);
                 
             }
@@ -147,6 +148,7 @@ namespace HallMark_Management_System.Views
                 companyModel.state_code = state_code.Text;
                 companyModel.license_no = license_no.Text;
                 companyModel.invoice_code = invoice_code.Text;
+                companyModel.shortName = shortName.Text;
 
                 addACompany(companyModel);
 

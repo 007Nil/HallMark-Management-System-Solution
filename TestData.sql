@@ -1,0 +1,2 @@
+INSERT INTO Company_table (customer_name,Address,City,pin,state,mobile,phone_0,phone_1,email,gst_no,pan_no,place_of_supply,state_code,license_no,invoice_code)
+VALUES ('TEST COMPANY','1600 Amphitheatre Pkwy \n\t Mountain View​, CA, 94043-1351 \n\t United States','Cooch Beehar','736101','West Bengal',@mobile,@phone_0,@phone_1,@email,gst_no,@pan_no,@place_of_supply,@state_code,@license_no,@invoice_code)
