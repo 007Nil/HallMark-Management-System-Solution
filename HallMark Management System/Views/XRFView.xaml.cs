@@ -71,7 +71,15 @@ namespace HallMark_Management_System.Views
                             gridData.jobCardNo = jobcardNo;
                             gridData.nameOfJewllery = eachParty.product_name;
                             gridData.declaredPurity = float.Parse(eachParty.purity);
+                            gridData.finess = 0;
+                            gridData.ag = "0.0";
+
+                            gridData.cu = "0.0";
                             gridData.pb = "0.0";
+
+                            gridData.ir = "0.00";
+                            gridData.ru = "0.00";
+                            gridData.cd = "0.00";
 
                             xrfGridData.Add(gridData);
 
@@ -86,13 +94,15 @@ namespace HallMark_Management_System.Views
 
             mainXRFDataGrid.ItemsSource = xrfGridData;
 
+            mainXRFDataGrid.CellEditEnding += this.gridDataCellEditEvent;
+
 
         }
 
         private string generateRandomNumber()
         {
             //Console.WriteLine("I am Called");
-            
+
             int value = random.Next(0, 5);
             //double val = 0.0;
             //Console.WriteLine(value);
@@ -197,6 +207,100 @@ namespace HallMark_Management_System.Views
         {
             return !_regex.IsMatch(text);
         }
+
+        private void DataGridRow_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+
+
+        }
+
+        private void gridDataCellEditEvent(object sender, DataGridCellEditEndingEventArgs e)
+        {
+            // Console.WriteLine("HIT");
+            if (String.Equals("Finess", (string)mainXRFDataGrid.SelectedCells[0].Column.Header))
+            {
+                var cellInfo = mainXRFDataGrid.SelectedCells[0];
+                var content = cellInfo.Column.GetCellContent(cellInfo.Item);
+                try
+                {
+                    //Console.WriteLine(content);
+                    float newFinessValue = float.Parse((String.Concat(content.ToString().Split(':')[1].Where(c => !Char.IsWhiteSpace(c)))));
+                    //Console.WriteLine((mainXRFDataGrid.SelectedCells[0].Item as MainXRFDataGrid).finess);
+                    float declearedPurityValue = (mainXRFDataGrid.SelectedCells[0].Item as MainXRFDataGrid).declaredPurity;
+                    if (declearedPurityValue > newFinessValue)
+                    {
+                        //Console.WriteLine("R");
+                        (mainXRFDataGrid.SelectedCells[0].Item as MainXRFDataGrid).result = "R";
+                    }
+                    else if (declearedPurityValue < newFinessValue)
+                    {
+                        Console.WriteLine(declearedPurityValue + 0.1);
+                        Console.WriteLine(declearedPurityValue + 0.9);
+                        Console.WriteLine("NEW " + newFinessValue);
+                        if ((declearedPurityValue + 0.1 <= newFinessValue && declearedPurityValue + 0.9 >= newFinessValue))
+                        {
+                            Console.WriteLine("HIT");
+                            (mainXRFDataGrid.SelectedCells[0].Item as MainXRFDataGrid).result = "W";
+                        }
+                        else if (String.Equals(Convert.ToString(declearedPurityValue + 0.1), Convert.ToString(newFinessValue))
+                            || String.Equals(Convert.ToString(declearedPurityValue + 0.9), Convert.ToString(newFinessValue)))
+                        {
+                            Console.WriteLine("HIT ELSE");
+                            (mainXRFDataGrid.SelectedCells[0].Item as MainXRFDataGrid).result = "W";
+                        }
+                        else
+                        {
+                            Console.WriteLine("HIT ELSE");
+                            (mainXRFDataGrid.SelectedCells[0].Item as MainXRFDataGrid).result = "G";
+                        }
+
+                        //mainXRFDataGrid.Items.Refresh();
+                    }
+
+                    //(mainXRFDataGrid.SelectedCells[0].Item as MainXRFDataGrid).finess = newFinessValue;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                    
+                }
+
+
+            }
+
+            if (String.Equals("IR\n %", (string)mainXRFDataGrid.SelectedCells[0].Column.Header))
+            {
+                var cellInfo = mainXRFDataGrid.SelectedCells[0];
+                var content = cellInfo.Column.GetCellContent(cellInfo.Item);
+                
+                try
+                {
+                    float IRValue = float.Parse((String.Concat(content.ToString().Split(':')[1].Where(c => !Char.IsWhiteSpace(c)))));
+                }
+                catch
+                {
+                    Console.WriteLine("error");
+                    
+                    (mainXRFDataGrid.SelectedCells[0].Item as MainXRFDataGrid).remark = "0.0";
+                }
+            }
+
+            if (String.Equals("Result", (string)mainXRFDataGrid.SelectedCells[0].Column.Header))
+            {
+                var cellInfo = mainXRFDataGrid.SelectedCells[0];
+                var content = cellInfo.Column.GetCellContent(cellInfo.Item);
+
+                string value = (String.Concat(content.ToString().Split(':')[1].Where(c => !Char.IsWhiteSpace(c))));
+
+                if (!string.Equals("G", value))
+                {
+                    (mainXRFDataGrid.SelectedCells[0].Item as MainXRFDataGrid).result = " ";
+                }
+            }
+
+            //Console.WriteLine(mainXRFDataGrid.SelectedCells[0].Column.Header.ToString());
+        }
     }
 
 
@@ -211,12 +315,12 @@ namespace HallMark_Management_System.Views
         public float declaredPurity { get; set; }
         public float finess { get; set; }
         public string result { get; set; }
-        public float ag { get; set; }
-        public float cu { get; set; }
+        public string ag { get; set; }
+        public string cu { get; set; }
         public string pb { get; set; }
-        public float ir { get; set; }
-        public float ru { get; set; }
-        public double cd { get; set; }
+        public string ir { get; set; }
+        public string ru { get; set; }
+        public string cd { get; set; }
         public string remark { get; set; }
 
     }
